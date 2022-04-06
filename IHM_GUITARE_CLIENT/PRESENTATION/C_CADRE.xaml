@@ -1,0 +1,51 @@
+﻿<Window x:Class="IHM_GUITARE_CLIENT.C_CADRE"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IHM_GUITARE_CLIENT"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="279.333"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="pngtree-black-guitar-music-poster-image_209000.jpg"/>
+        </Grid.Background>
+        <Grid.Effect>
+            <DropShadowEffect/>
+        </Grid.Effect>
+        <ListBox 
+            ItemsSource="{Binding Liste_Bois}"
+            HorizontalAlignment="Left" Height="342" Margin="576,37,0,0" VerticalAlignment="Top" Width="186" Grid.RowSpan="2" SelectionChanged="ListBox_SelectionChanged">
+            <ListBox.Effect>
+                <DropShadowEffect/>
+            </ListBox.Effect>
+        </ListBox>
+        <Image HorizontalAlignment="Left" Height="110" Margin="353,10,0,0" VerticalAlignment="Top" Width="175" Source="bois-removebg-preview.png"/>
+        <Image HorizontalAlignment="Left" Height="430" VerticalAlignment="Top" Width="373" Margin="5,20.667,0,-171.333" Source="Sans_titre-removebg-preview.png" RenderTransformOrigin="0.775,0.33" Grid.Row="1">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="10.58"/>
+                    <TranslateTransform X="11.678" Y="20.076"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image HorizontalAlignment="Left" Height="121" Margin="382,31.667,0,0" VerticalAlignment="Top" Width="125" Source="image_processing20200508-16898-vka1om.png" RenderTransformOrigin="0.714,0.32" Grid.Row="1"/>
+        <TextBox HorizontalAlignment="Left" Height="43" Margin="353,125,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="187" Grid.RowSpan="2">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <TextBox HorizontalAlignment="Left" Height="43" Margin="353,194.667,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="187" Grid.Row="1">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+
+    </Grid>
+</Window>

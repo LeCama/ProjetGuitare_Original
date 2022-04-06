@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LIB_Base", "LIB_Base\LIB_Base.csproj", "{119028D7-79BB-46D7-AD1C-0FEA2AFF1D15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Lib_CMD", "Test_Lib_CMD\Test_Lib_CMD.csproj", "{062C03CB-69D1-485C-A59F-1630A4FA58D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS_GUITARE", "WS_GUITARE\WS_GUITARE.csproj", "{2C2FA9F9-F128-49B2-85E4-85C53F64C3C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEST_WS_CMD", "TEST_WS_CMD\TEST_WS_CMD.csproj", "{861E7AD8-0669-406F-8448-E009441444C6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2C2FA9F9-F128-49B2-85E4-85C53F64C3C8} = {2C2FA9F9-F128-49B2-85E4-85C53F64C3C8}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHM_GUITARE_CLIENT", "IHM_GUITARE_CLIENT\IHM_GUITARE_CLIENT.csproj", "{A8057919-473E-405D-87FF-2F5DAEBB32A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{119028D7-79BB-46D7-AD1C-0FEA2AFF1D15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{119028D7-79BB-46D7-AD1C-0FEA2AFF1D15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{119028D7-79BB-46D7-AD1C-0FEA2AFF1D15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{119028D7-79BB-46D7-AD1C-0FEA2AFF1D15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{062C03CB-69D1-485C-A59F-1630A4FA58D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{062C03CB-69D1-485C-A59F-1630A4FA58D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{062C03CB-69D1-485C-A59F-1630A4FA58D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{062C03CB-69D1-485C-A59F-1630A4FA58D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C2FA9F9-F128-49B2-85E4-85C53F64C3C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C2FA9F9-F128-49B2-85E4-85C53F64C3C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C2FA9F9-F128-49B2-85E4-85C53F64C3C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C2FA9F9-F128-49B2-85E4-85C53F64C3C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{861E7AD8-0669-406F-8448-E009441444C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{861E7AD8-0669-406F-8448-E009441444C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{861E7AD8-0669-406F-8448-E009441444C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{861E7AD8-0669-406F-8448-E009441444C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8057919-473E-405D-87FF-2F5DAEBB32A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8057919-473E-405D-87FF-2F5DAEBB32A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8057919-473E-405D-87FF-2F5DAEBB32A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8057919-473E-405D-87FF-2F5DAEBB32A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3141F9A0-B18D-4899-9291-CB23FC9C1152}
+	EndGlobalSection
+EndGlobal

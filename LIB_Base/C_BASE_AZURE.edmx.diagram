@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="58c6223082464223b6093d14bae4e48a" Name="Diagram1">
+        <EntityTypeShape EntityType="C_BASE_AZURE.BoisCorp" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="C_BASE_AZURE.BoisManche" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="C_BASE_AZURE.BoisTouche" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="C_BASE_AZURE.choixMicro" Width="1.5" PointX="7.5" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="C_BASE_AZURE.Client" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="C_BASE_AZURE.Guitare" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="C_BASE_AZURE.Materiel" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="C_BASE_AZURE.microPosition1" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="C_BASE_AZURE.microPosition2" Width="1.5" PointX="3" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="C_BASE_AZURE.microPosition3" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="C_BASE_AZURE.typeVibrato" Width="1.5" PointX="3" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="C_BASE_AZURE.database_firewall_rules" Width="1.5" PointX="5.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="C_BASE_AZURE.ipv6_database_firewall_rules" Width="1.5" PointX="5.75" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="C_BASE_AZURE.FK__BoisCorps__idMat__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="C_BASE_AZURE.FK__Guitare__idBoisC__01142BA1" ManuallyRouted="false" />
+        <AssociationConnector Association="C_BASE_AZURE.FK__BoisManch__idMat__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="C_BASE_AZURE.FK__Guitare__idBoisM__02084FDA" ManuallyRouted="false" />
+        <AssociationConnector Association="C_BASE_AZURE.FK__BoisTouch__idMat__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="C_BASE_AZURE.FK__Guitare__idBoisT__00200768" ManuallyRouted="false" />
+        <AssociationConnector Association="C_BASE_AZURE.FK__choixMicr__idGui__0A9D95DB" ManuallyRouted="false" />
+        <AssociationConnector Association="C_BASE_AZURE.FK__choixMicr__idMic__07C12930" ManuallyRouted="false" />
+        <AssociationConnector Association="C_BASE_AZURE.FK__choixMicr__idMic__08B54D69" ManuallyRouted="false" />
+        <AssociationConnector Association="C_BASE_AZURE.FK__choixMicr__idMic__09A971A2" ManuallyRouted="false" />
+        <AssociationConnector Association="C_BASE_AZURE.FK__Guitare__idClien__02FC7413" ManuallyRouted="false" />
+        <AssociationConnector Association="C_BASE_AZURE.FK__Guitare__idVibra__7F2BE32F" ManuallyRouted="false" />
+        <AssociationConnector Association="C_BASE_AZURE.FK__microPosi__idMat__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="C_BASE_AZURE.FK__microPosi__idMat__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="C_BASE_AZURE.FK__microPosi__idMat__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="C_BASE_AZURE.FK__typeVibra__idMat__7C4F7684" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

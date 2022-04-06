@@ -1,0 +1,1032 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="C_BASE_AZURE.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BoisCorps">
+          <Key>
+            <PropertyRef Name="idBoisCorps" />
+          </Key>
+          <Property Name="idBoisCorps" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomBoisCorps" Type="varchar" MaxLength="50" />
+          <Property Name="idMatériel_" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BoisManche">
+          <Key>
+            <PropertyRef Name="idBoisManche" />
+          </Key>
+          <Property Name="idBoisManche" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomBoisManche" Type="varchar" MaxLength="50" />
+          <Property Name="idMatériel_" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BoisTouche">
+          <Key>
+            <PropertyRef Name="idBoisTouche" />
+          </Key>
+          <Property Name="idBoisTouche" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomBoisTouche" Type="varchar" MaxLength="50" />
+          <Property Name="idMatériel_" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="choixMicro">
+          <Key>
+            <PropertyRef Name="idMicro1" />
+          </Key>
+          <Property Name="idMicro1" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreMicro" Type="int" Nullable="false" />
+          <Property Name="idMicro3" Type="int" Nullable="false" />
+          <Property Name="idMicro2" Type="int" Nullable="false" />
+          <Property Name="idGuitare" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="idClient" />
+          </Key>
+          <Property Name="idClient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="telephone" Type="int" Nullable="false" />
+          <Property Name="Prenom" Type="varchar" MaxLength="50" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="Nom" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Guitare">
+          <Key>
+            <PropertyRef Name="idGuitare" />
+          </Key>
+          <Property Name="idGuitare" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tempsPreparation" Type="varchar" MaxLength="50" />
+          <Property Name="prix" Type="int" />
+          <Property Name="idVibrato" Type="int" Nullable="false" />
+          <Property Name="idBoisTouche" Type="int" Nullable="false" />
+          <Property Name="idBoisCorps" Type="int" Nullable="false" />
+          <Property Name="idBoisManche" Type="int" Nullable="false" />
+          <Property Name="idClient" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Materiel">
+          <Key>
+            <PropertyRef Name="idMateriel" />
+          </Key>
+          <Property Name="idMateriel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fournisseur" Type="varchar" MaxLength="50" />
+          <Property Name="Nom" Type="varchar" MaxLength="50" />
+          <Property Name="Prix" Type="varchar" MaxLength="50" />
+          <Property Name="stock" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="microPosition1">
+          <Key>
+            <PropertyRef Name="idMicro1" />
+          </Key>
+          <Property Name="idMicro1" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomMicroBas" Type="varchar" MaxLength="50" />
+          <Property Name="idMatériel_" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="microPosition2">
+          <Key>
+            <PropertyRef Name="idMicro2" />
+          </Key>
+          <Property Name="idMicro2" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomMicroCentre" Type="varchar" MaxLength="50" />
+          <Property Name="idMatériel_" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="microPosition3">
+          <Key>
+            <PropertyRef Name="idMicro3" />
+          </Key>
+          <Property Name="idMicro3" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomMicroHaut" Type="varchar" MaxLength="50" />
+          <Property Name="idMatériel_" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="typeVibrato">
+          <Key>
+            <PropertyRef Name="idVibrato" />
+          </Key>
+          <Property Name="idVibrato" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomVibrato" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="marqueVibrato" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="modeleVibrato" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idMatériel_" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'BDD_Guitare.sys.database_firewall_rules' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+          <Property Name="modify_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'BDD_Guitare.sys.ipv6_database_firewall_rules' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="ipv6_database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ipv6_address" />
+            <PropertyRef Name="end_ipv6_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="start_ipv6_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="end_ipv6_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+          <Property Name="modify_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__BoisCorps__idMat__68487DD7">
+          <End Role="Materiel" Type="Self.Materiel" Multiplicity="1" />
+          <End Role="BoisCorps" Type="Self.BoisCorps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materiel">
+              <PropertyRef Name="idMateriel" />
+            </Principal>
+            <Dependent Role="BoisCorps">
+              <PropertyRef Name="idMatériel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BoisManch__idMat__6477ECF3">
+          <End Role="Materiel" Type="Self.Materiel" Multiplicity="1" />
+          <End Role="BoisManche" Type="Self.BoisManche" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materiel">
+              <PropertyRef Name="idMateriel" />
+            </Principal>
+            <Dependent Role="BoisManche">
+              <PropertyRef Name="idMatériel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BoisTouch__idMat__6C190EBB">
+          <End Role="Materiel" Type="Self.Materiel" Multiplicity="1" />
+          <End Role="BoisTouche" Type="Self.BoisTouche" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materiel">
+              <PropertyRef Name="idMateriel" />
+            </Principal>
+            <Dependent Role="BoisTouche">
+              <PropertyRef Name="idMatériel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__choixMicr__idGui__0A9D95DB">
+          <End Role="Guitare" Type="Self.Guitare" Multiplicity="1" />
+          <End Role="choixMicro" Type="Self.choixMicro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guitare">
+              <PropertyRef Name="idGuitare" />
+            </Principal>
+            <Dependent Role="choixMicro">
+              <PropertyRef Name="idGuitare" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__choixMicr__idMic__07C12930">
+          <End Role="microPosition1" Type="Self.microPosition1" Multiplicity="1" />
+          <End Role="choixMicro" Type="Self.choixMicro" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="microPosition1">
+              <PropertyRef Name="idMicro1" />
+            </Principal>
+            <Dependent Role="choixMicro">
+              <PropertyRef Name="idMicro1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__choixMicr__idMic__08B54D69">
+          <End Role="microPosition3" Type="Self.microPosition3" Multiplicity="1" />
+          <End Role="choixMicro" Type="Self.choixMicro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="microPosition3">
+              <PropertyRef Name="idMicro3" />
+            </Principal>
+            <Dependent Role="choixMicro">
+              <PropertyRef Name="idMicro3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__choixMicr__idMic__09A971A2">
+          <End Role="microPosition2" Type="Self.microPosition2" Multiplicity="1" />
+          <End Role="choixMicro" Type="Self.choixMicro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="microPosition2">
+              <PropertyRef Name="idMicro2" />
+            </Principal>
+            <Dependent Role="choixMicro">
+              <PropertyRef Name="idMicro2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Guitare__idBoisC__01142BA1">
+          <End Role="BoisCorps" Type="Self.BoisCorps" Multiplicity="1" />
+          <End Role="Guitare" Type="Self.Guitare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BoisCorps">
+              <PropertyRef Name="idBoisCorps" />
+            </Principal>
+            <Dependent Role="Guitare">
+              <PropertyRef Name="idBoisCorps" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Guitare__idBoisM__02084FDA">
+          <End Role="BoisManche" Type="Self.BoisManche" Multiplicity="1" />
+          <End Role="Guitare" Type="Self.Guitare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BoisManche">
+              <PropertyRef Name="idBoisManche" />
+            </Principal>
+            <Dependent Role="Guitare">
+              <PropertyRef Name="idBoisManche" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Guitare__idBoisT__00200768">
+          <End Role="BoisTouche" Type="Self.BoisTouche" Multiplicity="1" />
+          <End Role="Guitare" Type="Self.Guitare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BoisTouche">
+              <PropertyRef Name="idBoisTouche" />
+            </Principal>
+            <Dependent Role="Guitare">
+              <PropertyRef Name="idBoisTouche" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Guitare__idClien__02FC7413">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="Guitare" Type="Self.Guitare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="idClient" />
+            </Principal>
+            <Dependent Role="Guitare">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Guitare__idVibra__7F2BE32F">
+          <End Role="typeVibrato" Type="Self.typeVibrato" Multiplicity="1" />
+          <End Role="Guitare" Type="Self.Guitare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="typeVibrato">
+              <PropertyRef Name="idVibrato" />
+            </Principal>
+            <Dependent Role="Guitare">
+              <PropertyRef Name="idVibrato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__microPosi__idMat__6FE99F9F">
+          <End Role="Materiel" Type="Self.Materiel" Multiplicity="1" />
+          <End Role="microPosition3" Type="Self.microPosition3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materiel">
+              <PropertyRef Name="idMateriel" />
+            </Principal>
+            <Dependent Role="microPosition3">
+              <PropertyRef Name="idMatériel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__microPosi__idMat__73BA3083">
+          <End Role="Materiel" Type="Self.Materiel" Multiplicity="1" />
+          <End Role="microPosition1" Type="Self.microPosition1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materiel">
+              <PropertyRef Name="idMateriel" />
+            </Principal>
+            <Dependent Role="microPosition1">
+              <PropertyRef Name="idMatériel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__microPosi__idMat__778AC167">
+          <End Role="Materiel" Type="Self.Materiel" Multiplicity="1" />
+          <End Role="microPosition2" Type="Self.microPosition2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materiel">
+              <PropertyRef Name="idMateriel" />
+            </Principal>
+            <Dependent Role="microPosition2">
+              <PropertyRef Name="idMatériel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__typeVibra__idMat__7C4F7684">
+          <End Role="Materiel" Type="Self.Materiel" Multiplicity="1" />
+          <End Role="typeVibrato" Type="Self.typeVibrato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materiel">
+              <PropertyRef Name="idMateriel" />
+            </Principal>
+            <Dependent Role="typeVibrato">
+              <PropertyRef Name="idMatériel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="C_BASE_AZUREStoreContainer">
+          <EntitySet Name="BoisCorps" EntityType="Self.BoisCorps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BoisManche" EntityType="Self.BoisManche" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BoisTouche" EntityType="Self.BoisTouche" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="choixMicro" EntityType="Self.choixMicro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Guitare" EntityType="Self.Guitare" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Materiel" EntityType="Self.Materiel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="microPosition1" EntityType="Self.microPosition1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="microPosition2" EntityType="Self.microPosition2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="microPosition3" EntityType="Self.microPosition3" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="typeVibrato" EntityType="Self.typeVibrato" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+            <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ipv6_database_firewall_rules" EntityType="Self.ipv6_database_firewall_rules" store:Type="Views" store:Schema="sys">
+            <DefiningQuery>SELECT 
+    [ipv6_database_firewall_rules].[id] AS [id], 
+    [ipv6_database_firewall_rules].[name] AS [name], 
+    [ipv6_database_firewall_rules].[start_ipv6_address] AS [start_ipv6_address], 
+    [ipv6_database_firewall_rules].[end_ipv6_address] AS [end_ipv6_address], 
+    [ipv6_database_firewall_rules].[create_date] AS [create_date], 
+    [ipv6_database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[ipv6_database_firewall_rules] AS [ipv6_database_firewall_rules]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__BoisCorps__idMat__68487DD7" Association="Self.FK__BoisCorps__idMat__68487DD7">
+            <End Role="Materiel" EntitySet="Materiel" />
+            <End Role="BoisCorps" EntitySet="BoisCorps" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BoisManch__idMat__6477ECF3" Association="Self.FK__BoisManch__idMat__6477ECF3">
+            <End Role="Materiel" EntitySet="Materiel" />
+            <End Role="BoisManche" EntitySet="BoisManche" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BoisTouch__idMat__6C190EBB" Association="Self.FK__BoisTouch__idMat__6C190EBB">
+            <End Role="Materiel" EntitySet="Materiel" />
+            <End Role="BoisTouche" EntitySet="BoisTouche" />
+          </AssociationSet>
+          <AssociationSet Name="FK__choixMicr__idGui__0A9D95DB" Association="Self.FK__choixMicr__idGui__0A9D95DB">
+            <End Role="Guitare" EntitySet="Guitare" />
+            <End Role="choixMicro" EntitySet="choixMicro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__choixMicr__idMic__07C12930" Association="Self.FK__choixMicr__idMic__07C12930">
+            <End Role="microPosition1" EntitySet="microPosition1" />
+            <End Role="choixMicro" EntitySet="choixMicro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__choixMicr__idMic__08B54D69" Association="Self.FK__choixMicr__idMic__08B54D69">
+            <End Role="microPosition3" EntitySet="microPosition3" />
+            <End Role="choixMicro" EntitySet="choixMicro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__choixMicr__idMic__09A971A2" Association="Self.FK__choixMicr__idMic__09A971A2">
+            <End Role="microPosition2" EntitySet="microPosition2" />
+            <End Role="choixMicro" EntitySet="choixMicro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Guitare__idBoisC__01142BA1" Association="Self.FK__Guitare__idBoisC__01142BA1">
+            <End Role="BoisCorps" EntitySet="BoisCorps" />
+            <End Role="Guitare" EntitySet="Guitare" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Guitare__idBoisM__02084FDA" Association="Self.FK__Guitare__idBoisM__02084FDA">
+            <End Role="BoisManche" EntitySet="BoisManche" />
+            <End Role="Guitare" EntitySet="Guitare" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Guitare__idBoisT__00200768" Association="Self.FK__Guitare__idBoisT__00200768">
+            <End Role="BoisTouche" EntitySet="BoisTouche" />
+            <End Role="Guitare" EntitySet="Guitare" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Guitare__idClien__02FC7413" Association="Self.FK__Guitare__idClien__02FC7413">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Guitare" EntitySet="Guitare" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Guitare__idVibra__7F2BE32F" Association="Self.FK__Guitare__idVibra__7F2BE32F">
+            <End Role="typeVibrato" EntitySet="typeVibrato" />
+            <End Role="Guitare" EntitySet="Guitare" />
+          </AssociationSet>
+          <AssociationSet Name="FK__microPosi__idMat__6FE99F9F" Association="Self.FK__microPosi__idMat__6FE99F9F">
+            <End Role="Materiel" EntitySet="Materiel" />
+            <End Role="microPosition3" EntitySet="microPosition3" />
+          </AssociationSet>
+          <AssociationSet Name="FK__microPosi__idMat__73BA3083" Association="Self.FK__microPosi__idMat__73BA3083">
+            <End Role="Materiel" EntitySet="Materiel" />
+            <End Role="microPosition1" EntitySet="microPosition1" />
+          </AssociationSet>
+          <AssociationSet Name="FK__microPosi__idMat__778AC167" Association="Self.FK__microPosi__idMat__778AC167">
+            <End Role="Materiel" EntitySet="Materiel" />
+            <End Role="microPosition2" EntitySet="microPosition2" />
+          </AssociationSet>
+          <AssociationSet Name="FK__typeVibra__idMat__7C4F7684" Association="Self.FK__typeVibra__idMat__7C4F7684">
+            <End Role="Materiel" EntitySet="Materiel" />
+            <End Role="typeVibrato" EntitySet="typeVibrato" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="C_BASE_AZURE" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BoisCorp">
+          <Key>
+            <PropertyRef Name="idBoisCorps" />
+          </Key>
+          <Property Name="idBoisCorps" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomBoisCorps" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idMatériel_" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Materiel" Relationship="Self.FK__BoisCorps__idMat__68487DD7" FromRole="BoisCorps" ToRole="Materiel" />
+        </EntityType>
+        <EntityType Name="BoisManche">
+          <Key>
+            <PropertyRef Name="idBoisManche" />
+          </Key>
+          <Property Name="idBoisManche" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomBoisManche" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idMatériel_" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Materiel" Relationship="Self.FK__BoisManch__idMat__6477ECF3" FromRole="BoisManche" ToRole="Materiel" />
+          <NavigationProperty Name="Guitares" Relationship="Self.FK__Guitare__idBoisM__02084FDA" FromRole="BoisManche" ToRole="Guitare" />
+        </EntityType>
+        <EntityType Name="BoisTouche">
+          <Key>
+            <PropertyRef Name="idBoisTouche" />
+          </Key>
+          <Property Name="idBoisTouche" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomBoisTouche" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idMatériel_" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Materiel" Relationship="Self.FK__BoisTouch__idMat__6C190EBB" FromRole="BoisTouche" ToRole="Materiel" />
+          <NavigationProperty Name="Guitares" Relationship="Self.FK__Guitare__idBoisT__00200768" FromRole="BoisTouche" ToRole="Guitare" />
+        </EntityType>
+        <EntityType Name="choixMicro">
+          <Key>
+            <PropertyRef Name="idMicro1" />
+          </Key>
+          <Property Name="idMicro1" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreMicro" Type="Int32" Nullable="false" />
+          <Property Name="idMicro3" Type="Int32" Nullable="false" />
+          <Property Name="idMicro2" Type="Int32" Nullable="false" />
+          <Property Name="idGuitare" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Guitare" Relationship="Self.FK__choixMicr__idGui__0A9D95DB" FromRole="choixMicro" ToRole="Guitare" />
+          <NavigationProperty Name="microPosition1" Relationship="Self.FK__choixMicr__idMic__07C12930" FromRole="choixMicro" ToRole="microPosition1" />
+          <NavigationProperty Name="microPosition3" Relationship="Self.FK__choixMicr__idMic__08B54D69" FromRole="choixMicro" ToRole="microPosition3" />
+          <NavigationProperty Name="microPosition2" Relationship="Self.FK__choixMicr__idMic__09A971A2" FromRole="choixMicro" ToRole="microPosition2" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="idClient" />
+          </Key>
+          <Property Name="idClient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="telephone" Type="Int32" Nullable="false" />
+          <Property Name="Prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Guitares" Relationship="Self.FK__Guitare__idClien__02FC7413" FromRole="Client" ToRole="Guitare" />
+        </EntityType>
+        <EntityType Name="Guitare">
+          <Key>
+            <PropertyRef Name="idGuitare" />
+          </Key>
+          <Property Name="idGuitare" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tempsPreparation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="prix" Type="Int32" />
+          <Property Name="idVibrato" Type="Int32" Nullable="false" />
+          <Property Name="idBoisTouche" Type="Int32" Nullable="false" />
+          <Property Name="idBoisCorps" Type="Int32" Nullable="false" />
+          <Property Name="idBoisManche" Type="Int32" Nullable="false" />
+          <Property Name="idClient" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BoisCorp" Relationship="Self.FK__Guitare__idBoisC__01142BA1" FromRole="Guitare" ToRole="BoisCorps" />
+          <NavigationProperty Name="BoisManche" Relationship="Self.FK__Guitare__idBoisM__02084FDA" FromRole="Guitare" ToRole="BoisManche" />
+          <NavigationProperty Name="BoisTouche" Relationship="Self.FK__Guitare__idBoisT__00200768" FromRole="Guitare" ToRole="BoisTouche" />
+          <NavigationProperty Name="choixMicroes" Relationship="Self.FK__choixMicr__idGui__0A9D95DB" FromRole="Guitare" ToRole="choixMicro" />
+          <NavigationProperty Name="Client" Relationship="Self.FK__Guitare__idClien__02FC7413" FromRole="Guitare" ToRole="Client" />
+          <NavigationProperty Name="typeVibrato" Relationship="Self.FK__Guitare__idVibra__7F2BE32F" FromRole="Guitare" ToRole="typeVibrato" />
+        </EntityType>
+        <EntityType Name="Materiel">
+          <Key>
+            <PropertyRef Name="idMateriel" />
+          </Key>
+          <Property Name="idMateriel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fournisseur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Prix" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="stock" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          </EntityType>
+        <EntityType Name="microPosition1">
+          <Key>
+            <PropertyRef Name="idMicro1" />
+          </Key>
+          <Property Name="idMicro1" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomMicroBas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idMatériel_" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="choixMicro" Relationship="Self.FK__choixMicr__idMic__07C12930" FromRole="microPosition1" ToRole="choixMicro" />
+          <NavigationProperty Name="Materiel" Relationship="Self.FK__microPosi__idMat__73BA3083" FromRole="microPosition1" ToRole="Materiel" />
+        </EntityType>
+        <EntityType Name="microPosition2">
+          <Key>
+            <PropertyRef Name="idMicro2" />
+          </Key>
+          <Property Name="idMicro2" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomMicroCentre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idMatériel_" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="choixMicroes" Relationship="Self.FK__choixMicr__idMic__09A971A2" FromRole="microPosition2" ToRole="choixMicro" />
+          <NavigationProperty Name="Materiel" Relationship="Self.FK__microPosi__idMat__778AC167" FromRole="microPosition2" ToRole="Materiel" />
+        </EntityType>
+        <EntityType Name="microPosition3">
+          <Key>
+            <PropertyRef Name="idMicro3" />
+          </Key>
+          <Property Name="idMicro3" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomMicroHaut" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idMatériel_" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="choixMicroes" Relationship="Self.FK__choixMicr__idMic__08B54D69" FromRole="microPosition3" ToRole="choixMicro" />
+          <NavigationProperty Name="Materiel" Relationship="Self.FK__microPosi__idMat__6FE99F9F" FromRole="microPosition3" ToRole="Materiel" />
+        </EntityType>
+        <EntityType Name="typeVibrato">
+          <Key>
+            <PropertyRef Name="idVibrato" />
+          </Key>
+          <Property Name="idVibrato" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomVibrato" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="marqueVibrato" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="modeleVibrato" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idMatériel_" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Guitares" Relationship="Self.FK__Guitare__idVibra__7F2BE32F" FromRole="typeVibrato" ToRole="Guitare" />
+          <NavigationProperty Name="Materiel" Relationship="Self.FK__typeVibra__idMat__7C4F7684" FromRole="typeVibrato" ToRole="Materiel" />
+        </EntityType>
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="ipv6_database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ipv6_address" />
+            <PropertyRef Name="end_ipv6_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="start_ipv6_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="end_ipv6_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK__BoisCorps__idMat__68487DD7">
+          <End Role="Materiel" Type="Self.Materiel" Multiplicity="1" />
+          <End Role="BoisCorps" Type="C_BASE_AZURE.BoisCorp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materiel">
+              <PropertyRef Name="idMateriel" />
+            </Principal>
+            <Dependent Role="BoisCorps">
+              <PropertyRef Name="idMatériel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Guitare__idBoisC__01142BA1">
+          <End Role="BoisCorps" Type="C_BASE_AZURE.BoisCorp" Multiplicity="1" />
+          <End Role="Guitare" Type="Self.Guitare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BoisCorps">
+              <PropertyRef Name="idBoisCorps" />
+            </Principal>
+            <Dependent Role="Guitare">
+              <PropertyRef Name="idBoisCorps" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BoisManch__idMat__6477ECF3">
+          <End Role="Materiel" Type="Self.Materiel" Multiplicity="1" />
+          <End Role="BoisManche" Type="Self.BoisManche" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materiel">
+              <PropertyRef Name="idMateriel" />
+            </Principal>
+            <Dependent Role="BoisManche">
+              <PropertyRef Name="idMatériel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Guitare__idBoisM__02084FDA">
+          <End Role="BoisManche" Type="Self.BoisManche" Multiplicity="1" />
+          <End Role="Guitare" Type="Self.Guitare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BoisManche">
+              <PropertyRef Name="idBoisManche" />
+            </Principal>
+            <Dependent Role="Guitare">
+              <PropertyRef Name="idBoisManche" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BoisTouch__idMat__6C190EBB">
+          <End Role="Materiel" Type="Self.Materiel" Multiplicity="1" />
+          <End Role="BoisTouche" Type="Self.BoisTouche" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materiel">
+              <PropertyRef Name="idMateriel" />
+            </Principal>
+            <Dependent Role="BoisTouche">
+              <PropertyRef Name="idMatériel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Guitare__idBoisT__00200768">
+          <End Role="BoisTouche" Type="Self.BoisTouche" Multiplicity="1" />
+          <End Role="Guitare" Type="Self.Guitare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BoisTouche">
+              <PropertyRef Name="idBoisTouche" />
+            </Principal>
+            <Dependent Role="Guitare">
+              <PropertyRef Name="idBoisTouche" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__choixMicr__idGui__0A9D95DB">
+          <End Role="Guitare" Type="Self.Guitare" Multiplicity="1" />
+          <End Role="choixMicro" Type="Self.choixMicro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guitare">
+              <PropertyRef Name="idGuitare" />
+            </Principal>
+            <Dependent Role="choixMicro">
+              <PropertyRef Name="idGuitare" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__choixMicr__idMic__07C12930">
+          <End Role="microPosition1" Type="Self.microPosition1" Multiplicity="1" />
+          <End Role="choixMicro" Type="Self.choixMicro" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="microPosition1">
+              <PropertyRef Name="idMicro1" />
+            </Principal>
+            <Dependent Role="choixMicro">
+              <PropertyRef Name="idMicro1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__choixMicr__idMic__08B54D69">
+          <End Role="microPosition3" Type="Self.microPosition3" Multiplicity="1" />
+          <End Role="choixMicro" Type="Self.choixMicro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="microPosition3">
+              <PropertyRef Name="idMicro3" />
+            </Principal>
+            <Dependent Role="choixMicro">
+              <PropertyRef Name="idMicro3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__choixMicr__idMic__09A971A2">
+          <End Role="microPosition2" Type="Self.microPosition2" Multiplicity="1" />
+          <End Role="choixMicro" Type="Self.choixMicro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="microPosition2">
+              <PropertyRef Name="idMicro2" />
+            </Principal>
+            <Dependent Role="choixMicro">
+              <PropertyRef Name="idMicro2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Guitare__idClien__02FC7413">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="Guitare" Type="Self.Guitare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="idClient" />
+            </Principal>
+            <Dependent Role="Guitare">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Guitare__idVibra__7F2BE32F">
+          <End Role="typeVibrato" Type="Self.typeVibrato" Multiplicity="1" />
+          <End Role="Guitare" Type="Self.Guitare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="typeVibrato">
+              <PropertyRef Name="idVibrato" />
+            </Principal>
+            <Dependent Role="Guitare">
+              <PropertyRef Name="idVibrato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__microPosi__idMat__6FE99F9F">
+          <End Role="Materiel" Type="Self.Materiel" Multiplicity="1" />
+          <End Role="microPosition3" Type="Self.microPosition3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materiel">
+              <PropertyRef Name="idMateriel" />
+            </Principal>
+            <Dependent Role="microPosition3">
+              <PropertyRef Name="idMatériel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__microPosi__idMat__73BA3083">
+          <End Role="Materiel" Type="Self.Materiel" Multiplicity="1" />
+          <End Role="microPosition1" Type="Self.microPosition1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materiel">
+              <PropertyRef Name="idMateriel" />
+            </Principal>
+            <Dependent Role="microPosition1">
+              <PropertyRef Name="idMatériel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__microPosi__idMat__778AC167">
+          <End Role="Materiel" Type="Self.Materiel" Multiplicity="1" />
+          <End Role="microPosition2" Type="Self.microPosition2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materiel">
+              <PropertyRef Name="idMateriel" />
+            </Principal>
+            <Dependent Role="microPosition2">
+              <PropertyRef Name="idMatériel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__typeVibra__idMat__7C4F7684">
+          <End Role="Materiel" Type="Self.Materiel" Multiplicity="1" />
+          <End Role="typeVibrato" Type="Self.typeVibrato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materiel">
+              <PropertyRef Name="idMateriel" />
+            </Principal>
+            <Dependent Role="typeVibrato">
+              <PropertyRef Name="idMatériel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="C_BASE_AZUR" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BoisCorps" EntityType="C_BASE_AZURE.BoisCorp" />
+          <EntitySet Name="BoisManches" EntityType="Self.BoisManche" />
+          <EntitySet Name="BoisTouches" EntityType="Self.BoisTouche" />
+          <EntitySet Name="choixMicroes" EntityType="Self.choixMicro" />
+          <EntitySet Name="Clients" EntityType="Self.Client" />
+          <EntitySet Name="Guitares" EntityType="Self.Guitare" />
+          <EntitySet Name="Les_Materiel" EntityType="Self.Materiel" />
+          <EntitySet Name="microPosition1" EntityType="Self.microPosition1" />
+          <EntitySet Name="microPosition2" EntityType="Self.microPosition2" />
+          <EntitySet Name="microPosition3" EntityType="Self.microPosition3" />
+          <EntitySet Name="typeVibratoes" EntityType="Self.typeVibrato" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+          <EntitySet Name="ipv6_database_firewall_rules" EntityType="Self.ipv6_database_firewall_rules" />
+          <AssociationSet Name="FK__BoisCorps__idMat__68487DD7" Association="Self.FK__BoisCorps__idMat__68487DD7">
+            <End Role="Materiel" EntitySet="Les_Materiel" />
+            <End Role="BoisCorps" EntitySet="BoisCorps" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Guitare__idBoisC__01142BA1" Association="Self.FK__Guitare__idBoisC__01142BA1">
+            <End Role="BoisCorps" EntitySet="BoisCorps" />
+            <End Role="Guitare" EntitySet="Guitares" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BoisManch__idMat__6477ECF3" Association="Self.FK__BoisManch__idMat__6477ECF3">
+            <End Role="Materiel" EntitySet="Les_Materiel" />
+            <End Role="BoisManche" EntitySet="BoisManches" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Guitare__idBoisM__02084FDA" Association="Self.FK__Guitare__idBoisM__02084FDA">
+            <End Role="BoisManche" EntitySet="BoisManches" />
+            <End Role="Guitare" EntitySet="Guitares" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BoisTouch__idMat__6C190EBB" Association="Self.FK__BoisTouch__idMat__6C190EBB">
+            <End Role="Materiel" EntitySet="Les_Materiel" />
+            <End Role="BoisTouche" EntitySet="BoisTouches" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Guitare__idBoisT__00200768" Association="Self.FK__Guitare__idBoisT__00200768">
+            <End Role="BoisTouche" EntitySet="BoisTouches" />
+            <End Role="Guitare" EntitySet="Guitares" />
+          </AssociationSet>
+          <AssociationSet Name="FK__choixMicr__idGui__0A9D95DB" Association="Self.FK__choixMicr__idGui__0A9D95DB">
+            <End Role="Guitare" EntitySet="Guitares" />
+            <End Role="choixMicro" EntitySet="choixMicroes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__choixMicr__idMic__07C12930" Association="Self.FK__choixMicr__idMic__07C12930">
+            <End Role="microPosition1" EntitySet="microPosition1" />
+            <End Role="choixMicro" EntitySet="choixMicroes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__choixMicr__idMic__08B54D69" Association="Self.FK__choixMicr__idMic__08B54D69">
+            <End Role="microPosition3" EntitySet="microPosition3" />
+            <End Role="choixMicro" EntitySet="choixMicroes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__choixMicr__idMic__09A971A2" Association="Self.FK__choixMicr__idMic__09A971A2">
+            <End Role="microPosition2" EntitySet="microPosition2" />
+            <End Role="choixMicro" EntitySet="choixMicroes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Guitare__idClien__02FC7413" Association="Self.FK__Guitare__idClien__02FC7413">
+            <End Role="Client" EntitySet="Clients" />
+            <End Role="Guitare" EntitySet="Guitares" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Guitare__idVibra__7F2BE32F" Association="Self.FK__Guitare__idVibra__7F2BE32F">
+            <End Role="typeVibrato" EntitySet="typeVibratoes" />
+            <End Role="Guitare" EntitySet="Guitares" />
+          </AssociationSet>
+          <AssociationSet Name="FK__microPosi__idMat__6FE99F9F" Association="Self.FK__microPosi__idMat__6FE99F9F">
+            <End Role="Materiel" EntitySet="Les_Materiel" />
+            <End Role="microPosition3" EntitySet="microPosition3" />
+          </AssociationSet>
+          <AssociationSet Name="FK__microPosi__idMat__73BA3083" Association="Self.FK__microPosi__idMat__73BA3083">
+            <End Role="Materiel" EntitySet="Les_Materiel" />
+            <End Role="microPosition1" EntitySet="microPosition1" />
+          </AssociationSet>
+          <AssociationSet Name="FK__microPosi__idMat__778AC167" Association="Self.FK__microPosi__idMat__778AC167">
+            <End Role="Materiel" EntitySet="Les_Materiel" />
+            <End Role="microPosition2" EntitySet="microPosition2" />
+          </AssociationSet>
+          <AssociationSet Name="FK__typeVibra__idMat__7C4F7684" Association="Self.FK__typeVibra__idMat__7C4F7684">
+            <End Role="Materiel" EntitySet="Les_Materiel" />
+            <End Role="typeVibrato" EntitySet="typeVibratoes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="C_BASE_AZUREStoreContainer" CdmEntityContainer="C_BASE_AZUR">
+          <EntitySetMapping Name="BoisCorps">
+            <EntityTypeMapping TypeName="C_BASE_AZURE.BoisCorp">
+              <MappingFragment StoreEntitySet="BoisCorps">
+                <ScalarProperty Name="idBoisCorps" ColumnName="idBoisCorps" />
+                <ScalarProperty Name="nomBoisCorps" ColumnName="nomBoisCorps" />
+                <ScalarProperty Name="idMatériel_" ColumnName="idMatériel_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BoisManches">
+            <EntityTypeMapping TypeName="C_BASE_AZURE.BoisManche">
+              <MappingFragment StoreEntitySet="BoisManche">
+                <ScalarProperty Name="idBoisManche" ColumnName="idBoisManche" />
+                <ScalarProperty Name="nomBoisManche" ColumnName="nomBoisManche" />
+                <ScalarProperty Name="idMatériel_" ColumnName="idMatériel_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BoisTouches">
+            <EntityTypeMapping TypeName="C_BASE_AZURE.BoisTouche">
+              <MappingFragment StoreEntitySet="BoisTouche">
+                <ScalarProperty Name="idBoisTouche" ColumnName="idBoisTouche" />
+                <ScalarProperty Name="nomBoisTouche" ColumnName="nomBoisTouche" />
+                <ScalarProperty Name="idMatériel_" ColumnName="idMatériel_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="choixMicroes">
+            <EntityTypeMapping TypeName="C_BASE_AZURE.choixMicro">
+              <MappingFragment StoreEntitySet="choixMicro">
+                <ScalarProperty Name="idMicro1" ColumnName="idMicro1" />
+                <ScalarProperty Name="nombreMicro" ColumnName="nombreMicro" />
+                <ScalarProperty Name="idMicro3" ColumnName="idMicro3" />
+                <ScalarProperty Name="idMicro2" ColumnName="idMicro2" />
+                <ScalarProperty Name="idGuitare" ColumnName="idGuitare" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="C_BASE_AZURE.Client">
+              <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="idClient" ColumnName="idClient" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Guitares">
+            <EntityTypeMapping TypeName="C_BASE_AZURE.Guitare">
+              <MappingFragment StoreEntitySet="Guitare">
+                <ScalarProperty Name="idGuitare" ColumnName="idGuitare" />
+                <ScalarProperty Name="tempsPreparation" ColumnName="tempsPreparation" />
+                <ScalarProperty Name="prix" ColumnName="prix" />
+                <ScalarProperty Name="idVibrato" ColumnName="idVibrato" />
+                <ScalarProperty Name="idBoisTouche" ColumnName="idBoisTouche" />
+                <ScalarProperty Name="idBoisCorps" ColumnName="idBoisCorps" />
+                <ScalarProperty Name="idBoisManche" ColumnName="idBoisManche" />
+                <ScalarProperty Name="idClient" ColumnName="idClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Les_Materiel">
+            <EntityTypeMapping TypeName="C_BASE_AZURE.Materiel">
+              <MappingFragment StoreEntitySet="Materiel">
+                <ScalarProperty Name="idMateriel" ColumnName="idMateriel" />
+                <ScalarProperty Name="fournisseur" ColumnName="fournisseur" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Prix" ColumnName="Prix" />
+                <ScalarProperty Name="stock" ColumnName="stock" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="microPosition1">
+            <EntityTypeMapping TypeName="C_BASE_AZURE.microPosition1">
+              <MappingFragment StoreEntitySet="microPosition1">
+                <ScalarProperty Name="idMicro1" ColumnName="idMicro1" />
+                <ScalarProperty Name="nomMicroBas" ColumnName="nomMicroBas" />
+                <ScalarProperty Name="idMatériel_" ColumnName="idMatériel_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="microPosition2">
+            <EntityTypeMapping TypeName="C_BASE_AZURE.microPosition2">
+              <MappingFragment StoreEntitySet="microPosition2">
+                <ScalarProperty Name="idMicro2" ColumnName="idMicro2" />
+                <ScalarProperty Name="nomMicroCentre" ColumnName="nomMicroCentre" />
+                <ScalarProperty Name="idMatériel_" ColumnName="idMatériel_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="microPosition3">
+            <EntityTypeMapping TypeName="C_BASE_AZURE.microPosition3">
+              <MappingFragment StoreEntitySet="microPosition3">
+                <ScalarProperty Name="idMicro3" ColumnName="idMicro3" />
+                <ScalarProperty Name="nomMicroHaut" ColumnName="nomMicroHaut" />
+                <ScalarProperty Name="idMatériel_" ColumnName="idMatériel_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="typeVibratoes">
+            <EntityTypeMapping TypeName="C_BASE_AZURE.typeVibrato">
+              <MappingFragment StoreEntitySet="typeVibrato">
+                <ScalarProperty Name="idVibrato" ColumnName="idVibrato" />
+                <ScalarProperty Name="nomVibrato" ColumnName="nomVibrato" />
+                <ScalarProperty Name="marqueVibrato" ColumnName="marqueVibrato" />
+                <ScalarProperty Name="modeleVibrato" ColumnName="modeleVibrato" />
+                <ScalarProperty Name="idMatériel_" ColumnName="idMatériel_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="database_firewall_rules">
+            <EntityTypeMapping TypeName="C_BASE_AZURE.database_firewall_rules">
+              <MappingFragment StoreEntitySet="database_firewall_rules">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+                <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ipv6_database_firewall_rules">
+            <EntityTypeMapping TypeName="C_BASE_AZURE.ipv6_database_firewall_rules">
+              <MappingFragment StoreEntitySet="ipv6_database_firewall_rules">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="start_ipv6_address" ColumnName="start_ipv6_address" />
+                <ScalarProperty Name="end_ipv6_address" ColumnName="end_ipv6_address" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
